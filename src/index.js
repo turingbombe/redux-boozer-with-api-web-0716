@@ -11,8 +11,7 @@ import rootReducer from './reducers';
 import ReduxPromise from 'redux-promise'
 import { fetchCocktails } from './actions'
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-const store = createStoreWithMiddleware(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(ReduxPromise))
 
 store.dispatch( fetchCocktails() );
 

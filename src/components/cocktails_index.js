@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
+
 function CocktailsIndex (props) {
   const renderCocktails = (cocktail) => {
     return (<li key={cocktail.id}>
@@ -13,6 +14,7 @@ function CocktailsIndex (props) {
   return (
   <div>
     <div className='col-md-4'>
+      <Link to='/cocktails/new'>Add A New Cocktail</Link>
       <ul>
         {props.cocktails.map(renderCocktails)}
       </ul>
